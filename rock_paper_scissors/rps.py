@@ -3,7 +3,18 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+
+  first_turn = [["rock"], ["paper"], ["scissors"]]
+  return_arr = []
+  if n == 0:
+    return [[]]
+  elif n == 1:
+    return first_turn
+  else:
+    for turn in first_turn:
+      for existing in rock_paper_scissors(n - 1):
+        return_arr.append(turn + existing)
+  return return_arr
 
 
 if __name__ == "__main__":
